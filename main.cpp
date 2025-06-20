@@ -13,6 +13,12 @@ int main()
     int tok;
     while ((tok = lexer.GetToken(file)) != lexer.tok_eof)
     {
+        if (tok == lexer.tok_left_paren) {
+            while ((tok = lexer.GetToken(file)) != lexer.tok_right_paren) {
+                lexer.func_args.push_back(lexer.id_str);
+                lexer.func_args.push_back(std::to_string(tok));
+            }
+        }
         if (tok == lexer.tok_number)
         {
            printf("Number: %f\n", lexer.num_val);

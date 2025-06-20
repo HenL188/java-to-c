@@ -52,9 +52,10 @@ public:
         tok_or = -39,
         tok_not = -40,
     };
+    int last_char = ' ';
     std::string id_str;
     double num_val;
-    std::vector<std::string> func_name, func_type;
+    std::vector<std::string> func_name, func_type, func_args;
     int GetToken(FILE* f);
 };
 

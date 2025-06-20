@@ -1,7 +1,6 @@
 #include "Lexer.h"
 
 int Lexer::GetToken(FILE* f) {
-    static int last_char = ' ';
     while (isspace(last_char))
         last_char = fgetc(f);
     if (last_char == '/') {
